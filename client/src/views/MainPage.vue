@@ -4,18 +4,20 @@
     style="height: 100vh; width: 100vw; overflow: auto;"
   >
     <div class="col-md-4 align-self-center">
-      <h1 class="text-white text-center">Welcome {{player.name}}</h1>
-      <form-room @success-create-room="getRooms" />
+      <h1 class="text-white text-center">Welcome {{ player }}</h1>
+      <form-room @success-create-room="createRoom" />
     </div>
     <div class="container mt-5">
-      <div v-if="rooms" class="row">
-        <room v-for="room in 10" :key="room.id" />
+      <div v-if="rooms.length" class="row">
+        <room v-for="(room, i) in rooms" :key="i" :room="rooms[i]" />
       </div>
       <div
         v-else
         class="alert alert-light m-5 p-4 text-danger text-center"
         role="alert"
-      >No rooms available...!!!</div>
+      >
+        No rooms available...!!!
+      </div>
     </div>
   </div>
 </template>
@@ -35,12 +37,12 @@ export default {
     };
   },
   mounted() {
-    this.player = JSON.parse(localStorage.player);
-    this.getRooms();
+    this.player = localStorage.player;
   },
   methods: {
-    getRooms() {
-      this.$axios.get("/rooms");
+    createRoom(value) {
+      this.rooms.push(value);
+      console.log(this.rooms);
     }
   }
 };

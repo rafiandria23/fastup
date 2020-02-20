@@ -7,7 +7,12 @@
       <h1 class="text-white" id="title">" Cepetin Mas "</h1>
       <div class="mt-5">
         <form id="form-join" class="d-flex flex-column" @submit.prevent="enter">
-          <input type="text" v-model="nickname" class="input-form" placeholder="Nickname" />
+          <input
+            type="text"
+            v-model="nickname"
+            class="input-form"
+            placeholder="Nickname"
+          />
           <br />
           <input type="submit" class="btn btn-danger btn-lg" value="Enter" />
         </form>
@@ -25,16 +30,20 @@ export default {
   },
   methods: {
     enter() {
-      this.$axios
-        .post("/players", { name: this.nickname })
-        .then(({ data }) => {
-          localStorage.setItem("token", data.token);
-          localStorage.setItem("player", JSON.stringify(data.player));
-          this.$router.push({ name: "Main" });
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      if (this.nickname !== "") {
+        localStorage.setItem("player", this.nickname);
+        this.$router.push({ name: "Main" });
+      }
+      // this.$axios
+      //   .post("/players", { name: this.nickname })
+      //   .then(({ data }) => {
+      //     localStorage.setItem("token", data.token);
+      //     localStorage.setItem("player", JSON.stringify(data.player));
+      //     this.$router.push({ name: "Main" });
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
     }
   }
 };
