@@ -3,17 +3,17 @@
 module.exports = (sequelize, DataTypes) => {
   const {Model} = sequelize.Sequelize;
 
-  class Player extends Model {}
+  class Room extends Model {}
 
-  Player.init({
+  Room.init({
     name: DataTypes.STRING,
-    score: DataTypes.INTEGER
+    level: DataTypes.STRING
   }, {sequelize});
 
-  Player.associate = function(models) {
+  Room.associate = function(models) {
     // associations can be defined here
-    Player.belongsTo(models.Room);
+    Room.hasMany(models.Player);
   };
   
-  return Player;
+  return Room;
 };
