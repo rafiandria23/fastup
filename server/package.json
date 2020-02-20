@@ -1,0 +1,24 @@
+{
+  "name": "cepetin-mas-api",
+  "version": "1.0.0",
+  "description": "Hacktiv8 Phase 2 Week 3 Group Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "socket.io",
+    "express",
+    "sequelize",
+    "postgres"
+  ],
+  "author": "Adam Rafiandri, Onesinus, Ali",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^7.18.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.4",
+    "socket.io": "^2.3.0"
+  }
+}
