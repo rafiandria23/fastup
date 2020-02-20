@@ -4,20 +4,18 @@
     style="height: 100vh; width: 100vw; overflow: auto;"
   >
     <div class="col-md-4 align-self-center">
-      <h1 class="text-white text-center">Welcome Cublug</h1>
-      <form-room />
+      <h1 class="text-white text-center">Welcome {{player.name}}</h1>
+      <form-room @success-create-room="getRooms" />
     </div>
     <div class="container mt-5">
       <div v-if="rooms" class="row">
-        <room v-for="i in 8" :key="i" />
+        <room v-for="room in 10" :key="room.id" />
       </div>
       <div
         v-else
         class="alert alert-light m-5 p-4 text-danger text-center"
         role="alert"
-      >
-        No rooms available...!!!
-      </div>
+      >No rooms available...!!!</div>
     </div>
   </div>
 </template>
@@ -32,8 +30,18 @@ export default {
   },
   data() {
     return {
-      rooms: []
+      rooms: [],
+      player: null
     };
+  },
+  mounted() {
+    this.player = JSON.parse(localStorage.player);
+    this.getRooms();
+  },
+  methods: {
+    getRooms() {
+      this.$axios.get("/rooms");
+    }
   }
 };
 </script>

@@ -6,10 +6,10 @@
     <div class="d-flex flex-column">
       <h1 class="text-white" id="title">" Cepetin Mas "</h1>
       <div class="mt-5">
-        <form id="form-join" class="d-flex flex-column">
-          <input type="text" class="input-form" placeholder="Nickname" />
+        <form id="form-join" class="d-flex flex-column" @submit.prevent="enter">
+          <input type="text" v-model="nickname" class="input-form" placeholder="Nickname" />
           <br />
-          <input type="button" class="btn btn-danger btn-lg" value="Enter" />
+          <input type="submit" class="btn btn-danger btn-lg" value="Enter" />
         </form>
       </div>
     </div>
@@ -17,7 +17,27 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      nickname: ""
+    };
+  },
+  methods: {
+    enter() {
+      this.$axios
+        .post("/players", { name: this.nickname })
+        .then(({ data }) => {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("player", JSON.stringify(data.player));
+          this.$router.push({ name: "Main" });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
+  }
+};
 </script>
 
 <style></style>

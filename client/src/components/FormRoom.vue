@@ -1,16 +1,7 @@
 <template>
   <div class="mt-5">
-    <form
-      id="form-join"
-      class="d-flex flex-column"
-      @submit.prevent="createRoom"
-    >
-      <input
-        type="text"
-        v-model="name"
-        class="input-form"
-        placeholder="Room name"
-      />
+    <form id="form-join" class="d-flex flex-column" @submit.prevent="createRoom">
+      <input type="text" v-model="name" class="input-form" placeholder="Room name" />
       <br />
       <input type="submit" class="btn btn-danger btn-lg" value="Create" />
     </form>
@@ -29,7 +20,7 @@ export default {
       this.$axios
         .post("/rooms", { name: this.name })
         .then(({ data }) => {
-          console.log(data);
+          this.$emit("success-create-room", data);
         })
         .catch(err => {
           console.log(err);

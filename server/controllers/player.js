@@ -1,25 +1,23 @@
 'use strict';
 
-const {Player} = require('../models');
+const { Player } = require('../models');
 const generateToken = require('../helpers/generate-token');
 
 class PlayerController {
   static login(req, res, next) {
-    const {name} = req.body;
-    console.log(generateToken);
-    Player.findOne({where: {name: name}})
+    const { name } = req.body;
+    Player.findOne({ where: { name: name } })
       .then(result => {
-        if (!result) {
-          return Player.create({name});
+        if (result) {
+          return result
         } else {
-          const {id, name, score} = result;
-          const token = generateToken({id, name, score});
-          res.status(200).json({token, player: result});
+          return Player.create({ name });
         }
       })
       .then(createdPlayer => {
-        const token = generateToken(createdPlayer);
-        res.status(201).json({token, player: createdPlayer});
+        const { id, name, score } = createdPlayer;
+        const token = generateToken({ id, name, score });
+        res.status(200).json({ token, player: createdPlayer });
       })
       .catch(err => {
         next(err);
@@ -32,13 +30,13 @@ class PlayerController {
       score: req.body.score
     };
     let currentScore = null;
-    Player.findOne({where: {name: playerData.name}})
+    Player.findOne({ where: { name: playerData.name } })
       .then(foundPlayer => {
         currentScore = foundPlayer.score;
-        return Player.update({score: Number(playerData.score) + currentScore}, {where: {name: playerData.name}});
+        return Player.update({ score: Number(playerData.score) + currentScore }, { where: { name: playerData.name } });
       })
       .then(result => {
-        return res.status(200).json({result: {name: playerData.name, score: Number(playerData.score) + currentScore}});
+        return res.status(200).json({ result: { name: playerData.name, score: Number(playerData.score) + currentScore } });
       })
       .catch(err => {
         next(err);
