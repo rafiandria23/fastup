@@ -4,12 +4,12 @@
     style="height: 100vh; width: 100vw; overflow: auto;"
   >
     <div class="col-md-4 align-self-center">
-      <h1 class="text-white text-center">Welcome Cublug</h1>
-      <form-room />
+      <h1 class="text-white text-center">Welcome {{ player }}</h1>
+      <form-room @success-create-room="createRoom" />
     </div>
     <div class="container mt-5">
-      <div v-if="rooms" class="row">
-        <room v-for="i in 8" :key="i" />
+      <div v-if="rooms.length" class="row">
+        <room v-for="(room, i) in rooms" :key="i" :room="rooms[i]" />
       </div>
       <div
         v-else
@@ -32,8 +32,18 @@ export default {
   },
   data() {
     return {
-      rooms: []
+      rooms: [],
+      player: null
     };
+  },
+  mounted() {
+    this.player = localStorage.player;
+  },
+  methods: {
+    createRoom(value) {
+      this.rooms.push(value);
+      console.log(this.rooms);
+    }
   }
 };
 </script>
