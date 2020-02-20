@@ -6,20 +6,19 @@ const generateToken = require('../helpers/generate-token');
 class PlayerController {
   static login(req, res, next) {
     const {name} = req.body;
-    console.log(generateToken);
     Player.findOne({where: {name: name}})
       .then(result => {
         if (!result) {
           return Player.create({name});
         } else {
-          const {id, name, score} = result;
-          const token = generateToken({id, name, score});
-          res.status(200).json({token, player: result});
+          // const token = generateToken({id, name, score});
+          // res.status(200).json({token, player: result});
+          return result;
         }
       })
-      .then(createdPlayer => {
-        const token = generateToken(createdPlayer);
-        res.status(201).json({token, player: createdPlayer});
+      .then(({id, name, score}) => {
+        const token = generateToken({id, name, score});
+        res.status(200).json({token, player: {id, name, score}});
       })
       .catch(err => {
         next(err);
