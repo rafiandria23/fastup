@@ -6,13 +6,17 @@ module.exports = (sequelize, DataTypes) => {
   class Player extends Model {}
 
   Player.init({
-    name: DataTypes.STRING,
-    score: DataTypes.INTEGER
+    name: {
+      type: DataTypes.STRING
+    },
+    score: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0
+    }
   }, {sequelize});
 
   Player.associate = function(models) {
     // associations can be defined here
-    Player.belongsTo(models.Room);
   };
   
   return Player;
