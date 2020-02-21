@@ -61,12 +61,9 @@ export default {
         .then(({ data }) => {
           this.rooms = data.rooms;
         })
-        .catch(err => {
-          console.log(err);
-        });
+        .catch(err => {});
     },
     success() {
-      console.log("masuk cuy");
       socket.emit("get_rooms");
     }
   }

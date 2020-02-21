@@ -29,12 +29,9 @@ export default {
       this.$axios
         .post("/rooms", { name: this.name })
         .then(({ data }) => {
-          console.log(data);
           this.$emit("success-create-room");
         })
-        .catch(err => {
-          console.log(err);
-        });
+        .catch(err => {});
     }
   }
 };

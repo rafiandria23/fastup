@@ -90,9 +90,7 @@ export default {
           this.quotes = data;
           this.randomize();
         })
-        .catch(err => {
-          console.log(err);
-        });
+        .catch(err => {});
     })
     socket.on('game_selesai', () => {
       this.isFinished = true;
@@ -126,11 +124,8 @@ export default {
         .then(({ data }) => {
           let playerData = JSON.parse(localStorage.player);
           this.players = data.rooms[playerData.RoomId-1].Players;
-          console.log(this.players);
         })
-        .catch(err => {
-          console.log(err);
-        });
+        .catch(err => {});
     },
     getQuotes() {
       socket.emit("game_start");
