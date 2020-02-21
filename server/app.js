@@ -14,6 +14,18 @@ const io = require('socket.io')(server);
 const indexRouter = require('./routes');
 const errorHandler = require('./middlewares/error-handler');
 
+io.on('connection', client => {
+  // Standby cek apakah ada user yang mengirimkan / emit
+  console.log("connect socket...");
+  client.on('get_rooms', () => {
+    console.log("server pocked and emit to all connected clients");
+    io.emit('get_rooms');
+  })
+  client.on('disconnect', () => { 
+
+  });
+});
+
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
