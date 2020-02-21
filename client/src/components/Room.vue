@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-3 my-2">
     <div class="room py-4 px-2 d-flex flex-column">
-      <h4 class="text-center">{{ room }}</h4>
+      <h4 class="text-center">{{ room.name }}</h4>
       <br />
       <p class="text-center">Player : 3</p>
       <input

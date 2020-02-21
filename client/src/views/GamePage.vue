@@ -12,7 +12,9 @@
           class="p-4 bg-light text-center rounded-pill"
           onmousedown="return false"
           onselectstart="return false"
-        >{{ sentence }}</h1>
+        >
+          {{ sentence }}
+        </h1>
         <br />
         <br />
         <p class="text-center text-white" style="font-size: 72px;">29</p>
@@ -27,7 +29,9 @@
           />
         </form>
 
-        <p class="text-center text-white" style="font-size: 72px;">your score : {{ score }}</p>
+        <p class="text-center text-white" style="font-size: 72px;">
+          your score : {{ score }}
+        </p>
       </div>
     </div>
   </div>
@@ -48,19 +52,21 @@ export default {
       if (this.answer.toLowerCase() === this.sentence.toLowerCase()) {
         this.answer = "";
         this.score += 10;
-        this.randomize()
+        this.randomize();
       }
     },
     randomize() {
       this.quotes = this.getQuotes.filter(a => {
-        return a.en.length < 75
-      })
-      this.sentence = this.quotes[Math.floor(Math.random() * this.quotes.length)].en;
+        return a.en.length < 75;
+      });
+      this.sentence = this.quotes[
+        Math.floor(Math.random() * this.quotes.length)
+      ].en;
     }
   },
-  mounted() { 
+  mounted() {
     this.quotes = this.getQuotes;
-    this.randomize()
+    this.randomize();
   },
   computed: {
     getQuotes() {

@@ -26,15 +26,15 @@ export default {
   },
   methods: {
     createRoom() {
-      this.$emit("success-create-room", this.name);
-      // this.$axios
-      //   .post("/rooms", { name: this.name })
-      //   .then(({ data }) => {
-      //     this.$emit("success-create-room", data);
-      //   })
-      //   .catch(err => {
-      //     console.log(err);
-      //   });
+      // this.$emit("success-create-room", this.name);
+      this.$axios
+        .post("/rooms", { name: this.name })
+        .then(({ data }) => {
+          this.$emit("success-create-room", data);
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
