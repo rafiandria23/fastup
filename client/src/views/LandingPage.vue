@@ -37,9 +37,7 @@ export default {
           localStorage.setItem("player", JSON.stringify(data.player));
           this.$router.push({ name: "Main" });
         })
-        .catch(err => {
-          console.log(err.response.data);
-        });
+        .catch(err => {});
     }
   }
 };

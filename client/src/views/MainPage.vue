@@ -30,7 +30,7 @@
 
 <script>
 import io from "socket.io-client";
-const socket = io("http://172.16.16.218:3000");
+const socket = io("https://cepetin-mas.herokuapp.com");
 
 import Room from "../components/Room";
 import FormRoom from "../components/FormRoom";
@@ -61,12 +61,9 @@ export default {
         .then(({ data }) => {
           this.rooms = data.rooms;
         })
-        .catch(err => {
-          console.log(err);
-        });
+        .catch(err => {});
     },
     success() {
-      console.log("masuk cuy");
       socket.emit("get_rooms");
     }
   }

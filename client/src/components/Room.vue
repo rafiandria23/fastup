@@ -11,7 +11,7 @@
 
 <script>
 import io from "socket.io-client";
-const socket = io("http://172.16.16.218:3000");
+const socket = io("https://cepetin-mas.herokuapp.com");
 
 export default {
   props: ["room"],
@@ -23,15 +23,11 @@ export default {
           RoomId: this.room.id
         })
         .then(({ data }) => {
-          console.log(data);
           currentToken.RoomId = this.room.id;
-          // console.log(currentToken);
           localStorage.setItem("player", JSON.stringify(currentToken));
           this.$router.push({ name: "Game" });
         })
-        .catch(err => {
-          console.log(err);
-        });
+        .catch(err => {});
       socket.emit("update_room");
     },
     getQuotes() {
@@ -41,9 +37,7 @@ export default {
           this.$store.commit("saveQuotes", data);
           this.$router.push("/game");
         })
-        .catch(err => {
-          console.log(err);
-        });
+        .catch(err => {});
     },
   },
   created() {
