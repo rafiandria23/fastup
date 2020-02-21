@@ -3,8 +3,16 @@
     class="container-fluid d-flex flex-column pt-5"
     style="height: 100vh; width: 100vw; overflow: auto;"
   >
-    <div class="container align-self-center">
-      <div class="d-flex justify-content-center flex-column">
+    <div class="container">
+      <div v-if="!quotes">
+        <div class="text-align-center">
+          <div class="row">
+            <player v-for="i in 2" :key="i" />
+          </div>
+          <button class="btn btn-warning btn-lg text-white w-25 mt-3" @click="getQuotes">Mulai</button>
+        </div>
+      </div>
+      <div v-else class="d-flex justify-content-center flex-column">
         <h1 class="text-white text-center">Ayo Cepetin Mas. . .</h1>
         <br />
         <br />
@@ -12,9 +20,7 @@
           class="p-4 bg-light text-center rounded-pill"
           onmousedown="return false"
           onselectstart="return false"
-        >
-          {{ sentence }}
-        </h1>
+        >{{ sentence }}</h1>
         <br />
         <br />
         <p class="text-center text-white" style="font-size: 72px;">29</p>
@@ -29,16 +35,18 @@
           />
         </form>
 
-        <p class="text-center text-white" style="font-size: 72px;">
-          your score : {{ score }}
-        </p>
+        <p class="text-center text-white" style="font-size: 72px;">your score : {{ score }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Player from "../components/Players";
 export default {
+  components: {
+    Player
+  },
   data() {
     return {
       quotes: null,
@@ -65,14 +73,14 @@ export default {
     }
   },
   mounted() {
-    this.quotes = this.getQuotes;
-    this.randomize();
-  },
-  computed: {
-    getQuotes() {
-      return this.$store.state.quotes;
-    }
+    // this.quotes = this.getQuotes;
+    // this.randomize();
   }
+  // computed: {
+  //   getQuotes() {
+  //     return this.$store.state.quotes;
+  //   }
+  // }
 };
 </script>
 
