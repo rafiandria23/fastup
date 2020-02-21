@@ -32,7 +32,7 @@ export default {
         .catch(err => {
           console.log(err);
         });
-        socket.emit("update_room");
+      socket.emit("update_room");
     },
     getQuotes() {
       this.$axios
@@ -48,7 +48,7 @@ export default {
   },
   created() {
     socket.on('update_room', () => {
-      this.$parent.getRooms();
+      this.$parent.success();
     });
   }
 };

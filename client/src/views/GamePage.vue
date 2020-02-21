@@ -73,6 +73,17 @@ export default {
     socket.on("next_sentence", () => {
       this.randomize();      
     });
+    socket.on('game_start', () => {
+      this.$axios
+        .get("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
+        .then(({ data }) => {
+          this.quotes = data;
+          this.randomize();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    })
   },
   methods: {
     typeMonitor() {
@@ -96,6 +107,7 @@ export default {
       ].en;
     },
     getRooms() {
+      this.players = [];
       this.$axios
         .get("/rooms")
         .then(({ data }) => {
@@ -108,15 +120,7 @@ export default {
         });
     },
     getQuotes() {
-      this.$axios
-        .get("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
-        .then(({ data }) => {
-          this.quotes = data;
-          this.randomize();
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      socket.emit("game_start");
     },
   },
   mounted() {

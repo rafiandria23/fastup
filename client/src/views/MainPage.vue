@@ -66,6 +66,7 @@ export default {
         });
     },
     success() {
+      console.log("masuk cuy");
       socket.emit("get_rooms");
     }
   }

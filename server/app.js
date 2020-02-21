@@ -27,6 +27,9 @@ io.on('connection', client => {
   client.on('next_sentence', () => {
     io.emit('next_sentence');
   })
+  client.on('game_start', () => {
+    io.emit('game_start');
+  })
   client.on('disconnect', () => { 
 
   });
