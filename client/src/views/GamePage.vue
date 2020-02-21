@@ -3,7 +3,7 @@
     class="container-fluid d-flex flex-column pt-5"
     style="height: 100vh; width: 100vw; overflow: auto;"
   >
-    <div class="container">
+    <div v-if="!isFinished" class="container">
       <div v-if="!quotes">
         <div class="text-align-center">
           <div class="row" v-if="players">
@@ -48,6 +48,15 @@
         </p>
       </div>
     </div>
+    <div v-if="isFinished" style="color: white; text-align: center">
+      <h1>
+        SEKIAN... Terimakasih...
+      </h1>
+      <br>
+      <h2>
+        Ingat senin <h1><b>L I V E    C O D E!!!</b></h1>
+      </h2>
+    </div>
   </div>
 </template>
 
@@ -66,7 +75,8 @@ export default {
       answer: "",
       score: 0,
       sentence: null,
-      players: []
+      players: [],
+      isFinished: false,
     };
   },
   created() {
@@ -84,16 +94,19 @@ export default {
           console.log(err);
         });
     })
+    socket.on('game_selesai', () => {
+      this.isFinished = true;
+    })
   },
   methods: {
     typeMonitor() {
       if (this.answer.toLowerCase() === this.sentence.toLowerCase()) {
-        socket.emit("next_sentence");
-        this.answer = "";
-        this.score += 10;
         if (this.score == 80) {
-          console.log("game selesai");
+          socket.emit("game_selesai");
         }else{
+          socket.emit("next_sentence");
+          this.answer = "";
+          this.score += 10;
           localStorage.setItem("score", this.score);
         }
       }

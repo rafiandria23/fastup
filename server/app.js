@@ -30,6 +30,9 @@ io.on('connection', client => {
   client.on('game_start', () => {
     io.emit('game_start');
   })
+  client.on('game_selesai', () => {
+    io.emit('game_selesai');
+  })
   client.on('disconnect', () => { 
 
   });
