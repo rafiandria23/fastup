@@ -6,10 +6,16 @@
     <div class="container">
       <div v-if="!quotes">
         <div class="text-align-center">
-          <div class="row">
-            <player v-for="i in 2" :key="i" />
+          <div class="row" v-if="players">
+            <player :player="player" v-for="(player,i) in players" :key="i" />
           </div>
-          <button class="btn btn-warning btn-lg text-white w-25 mt-3" @click="getQuotes">Mulai</button>
+          <!-- <div class="row" v-if="!rooms[1]"><h1>Player is belum cukup...</h1></div> -->
+          <button
+            class="btn btn-warning btn-lg text-white w-25 mt-3"
+            @click="getQuotes"
+          >
+            Mulai
+          </button>
         </div>
       </div>
       <div v-else class="d-flex justify-content-center flex-column">
@@ -20,7 +26,9 @@
           class="p-4 bg-light text-center rounded-pill"
           onmousedown="return false"
           onselectstart="return false"
-        >{{ sentence }}</h1>
+        >
+          {{ sentence }}
+        </h1>
         <br />
         <br />
         <p class="text-center text-white" style="font-size: 72px;">29</p>
@@ -35,7 +43,9 @@
           />
         </form>
 
-        <p class="text-center text-white" style="font-size: 72px;">your score : {{ score }}</p>
+        <p class="text-center text-white" style="font-size: 72px;">
+          your score : {{ score }}
+        </p>
       </div>
     </div>
   </div>
@@ -52,7 +62,8 @@ export default {
       quotes: null,
       answer: "",
       score: 0,
-      sentence: null
+      sentence: null,
+      players: []
     };
   },
   methods: {
@@ -70,9 +81,25 @@ export default {
       this.sentence = this.quotes[
         Math.floor(Math.random() * this.quotes.length)
       ].en;
+    },
+    getRooms() {
+      this.$axios
+        .get("/rooms")
+        .then(({ data }) => {
+          let playerData = JSON.parse(localStorage.player);
+          this.players = data.rooms[playerData.RoomId-1].Players;
+          console.log(this.players);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getQuotes() {
+       
     }
   },
   mounted() {
+    this.getRooms();
     // this.quotes = this.getQuotes;
     // this.randomize();
   }

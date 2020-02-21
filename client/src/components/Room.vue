@@ -17,12 +17,16 @@ export default {
   props: ["room"],
   methods: {
     join() {
+      let currentToken = JSON.parse(localStorage.player);
       this.$axios
-        .put(`/players/${JSON.parse(localStorage.player).id}`, {
+        .put(`/players/${currentToken.id}`, {
           RoomId: this.room.id
         })
         .then(({ data }) => {
           console.log(data);
+          currentToken.RoomId = this.room.id;
+          // console.log(currentToken);
+          localStorage.setItem("player", JSON.stringify(currentToken));
           this.$router.push({ name: "Game" });
         })
         .catch(err => {
