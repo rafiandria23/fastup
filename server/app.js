@@ -24,6 +24,9 @@ io.on('connection', client => {
   client.on('update_room', () => {
     io.emit('update_room');
   })
+  client.on('next_sentence', () => {
+    io.emit('next_sentence');
+  })
   client.on('disconnect', () => { 
 
   });

@@ -33,7 +33,7 @@
         <br />
         <p class="text-center text-white" style="font-size: 72px;">29</p>
 
-        <form id="form-join" class="d-flex flex-column">
+        <!-- <form id="form-join" class="d-flex flex-column"> -->
           <input
             type="text"
             v-on:keyup="typeMonitor"
@@ -41,7 +41,7 @@
             class="input-form"
             placeholder="Type here"
           />
-        </form>
+        <!-- </form> -->
 
         <p class="text-center text-white" style="font-size: 72px;">
           your score : {{ score }}
@@ -52,6 +52,9 @@
 </template>
 
 <script>
+import io from "socket.io-client";
+const socket = io("http://172.16.16.218:3000");
+
 import Player from "../components/Players";
 export default {
   components: {
@@ -66,17 +69,27 @@ export default {
       players: []
     };
   },
+  created() {
+    socket.on("next_sentence", () => {
+      this.randomize();      
+    });
+  },
   methods: {
     typeMonitor() {
       if (this.answer.toLowerCase() === this.sentence.toLowerCase()) {
+        socket.emit("next_sentence");
         this.answer = "";
         this.score += 10;
-        this.randomize();
+        if (this.score == 80) {
+          console.log("game selesai");
+        }else{
+          localStorage.setItem("score", this.score);
+        }
       }
     },
     randomize() {
-      this.quotes = this.getQuotes.filter(a => {
-        return a.en.length < 75;
+      this.quotes = this.quotes.filter(a => {
+        return a.en.length < 50;
       });
       this.sentence = this.quotes[
         Math.floor(Math.random() * this.quotes.length)
@@ -95,8 +108,16 @@ export default {
         });
     },
     getQuotes() {
-       
-    }
+      this.$axios
+        .get("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
+        .then(({ data }) => {
+          this.quotes = data;
+          this.randomize();
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
   },
   mounted() {
     this.getRooms();

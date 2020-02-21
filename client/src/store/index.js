@@ -12,6 +12,10 @@ export default new Vuex.Store({
       state.quotes = payload;
     }
   },
-  actions: {},
+  actions: {
+    getQuotes() {
+
+    }
+  },
   modules: {}
 });
