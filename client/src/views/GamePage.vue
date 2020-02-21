@@ -62,7 +62,7 @@
 
 <script>
 import io from "socket.io-client";
-const socket = io("http://172.16.16.218:3000");
+const socket = io("https://cepetin-mas.herokuapp.com");
 
 import Player from "../components/Players";
 export default {
