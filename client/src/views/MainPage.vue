@@ -25,6 +25,9 @@
 </template>
 
 <script>
+import io from "socket.io-client";
+const socket = io("http://localhost:3000");
+
 import Room from "../components/Room";
 import FormRoom from "../components/FormRoom";
 export default {
@@ -42,6 +45,11 @@ export default {
     this.player = JSON.parse(localStorage.player);
     this.getRooms();
   },
+  created() {
+    socket.on("get_rooms", () => {
+      this.getRooms();
+    });
+  },
   methods: {
     getRooms() {
       this.$axios
@@ -54,7 +62,7 @@ export default {
         });
     },
     success() {
-      this.getRooms();
+      socket.emit("get_rooms");
     }
   }
 };
