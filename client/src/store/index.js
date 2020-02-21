@@ -5,11 +5,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    quotes : null
+    quotes: null
   },
   mutations: {
     saveQuotes(state, payload) {
-      state.quotes = payload
+      state.quotes = payload;
     }
   },
   actions: {},

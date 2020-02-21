@@ -20,6 +20,7 @@ class PlayerController {
         res.status(200).json({ token, player: createdPlayer });
       })
       .catch(err => {
+        console.log(err)
         next(err);
       });
   }

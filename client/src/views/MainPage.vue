@@ -5,7 +5,7 @@
   >
     <div class="col-md-4 align-self-center">
       <h1 class="text-white text-center">Welcome {{ player }}</h1>
-      <form-room @success-create-room="createRoom" />
+      <form-room @success-create-room="success" />
     </div>
     <div class="container mt-5">
       <div v-if="rooms.length" class="row">
@@ -38,11 +38,32 @@ export default {
   },
   mounted() {
     this.player = localStorage.player;
+    this.getRooms();
   },
   methods: {
-    createRoom(value) {
-      this.rooms.push(value);
-      console.log(this.rooms);
+    success(value) {
+      // this.rooms.push(value);
+      // console.log(this.rooms);
+      console.log(value);
+      this.$axios
+        .post("/players", { name: this.player })
+        .then(({ data }) => {
+          console.log(data);
+          this.$router.push({ name: "Game" });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    getRooms() {
+      this.$axios
+        .get("/rooms")
+        .then(({ data }) => {
+          this.rooms = data;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   }
 };
