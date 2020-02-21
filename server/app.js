@@ -21,6 +21,9 @@ io.on('connection', client => {
     console.log("server pocked and emit to all connected clients");
     io.emit('get_rooms');
   })
+  client.on('update_room', () => {
+    io.emit('update_room');
+  })
   client.on('disconnect', () => { 
 
   });

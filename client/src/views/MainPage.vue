@@ -11,7 +11,11 @@
     </div>
     <div class="container mt-5">
       <div v-if="rooms.length" class="row">
-        <room v-for="room in rooms" :key="room.id" :room="room" />
+        <room 
+          v-for="room in rooms" 
+          :key="room.id" 
+          :room="room" 
+        />
       </div>
       <div
         v-else

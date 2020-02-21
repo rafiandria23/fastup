@@ -10,6 +10,9 @@
 </template>
 
 <script>
+import io from "socket.io-client";
+const socket = io("http://localhost:3000");
+
 export default {
   props: ["room"],
   methods: {
@@ -25,6 +28,7 @@ export default {
         .catch(err => {
           console.log(err);
         });
+        socket.emit("update_room");
     },
     getQuotes() {
       this.$axios
@@ -36,7 +40,12 @@ export default {
         .catch(err => {
           console.log(err);
         });
-    }
+    },
+  },
+  created() {
+    socket.on('update_room', () => {
+      this.$parent.getRooms();
+    });
   }
 };
 </script>
