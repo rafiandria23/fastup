@@ -4,12 +4,14 @@
     style="height: 100vh; width: 100vw; overflow: auto;"
   >
     <div class="col-md-4 align-self-center">
-      <h1 class="text-white text-center">Welcome {{ player }}</h1>
+      <h1 class="text-white text-center">
+        Welcome {{ player ? player.name : "" }}
+      </h1>
       <form-room @success-create-room="success" />
     </div>
     <div class="container mt-5">
       <div v-if="rooms.length" class="row">
-        <room v-for="(room, i) in rooms" :key="i" :room="rooms[i]" />
+        <room v-for="room in rooms" :key="room.id" :room="room" />
       </div>
       <div
         v-else
@@ -37,33 +39,22 @@ export default {
     };
   },
   mounted() {
-    this.player = localStorage.player;
+    this.player = JSON.parse(localStorage.player);
     this.getRooms();
   },
   methods: {
-    success(value) {
-      // this.rooms.push(value);
-      // console.log(this.rooms);
-      console.log(value);
+    getRooms() {
       this.$axios
-        .post("/players", { name: this.player })
+        .get("/rooms")
         .then(({ data }) => {
-          console.log(data);
-          this.$router.push({ name: "Game" });
+          this.rooms = data.rooms;
         })
         .catch(err => {
           console.log(err);
         });
     },
-    getRooms() {
-      this.$axios
-        .get("/rooms")
-        .then(({ data }) => {
-          this.rooms = data;
-        })
-        .catch(err => {
-          console.log(err);
-        });
+    success() {
+      this.getRooms();
     }
   }
 };

@@ -30,20 +30,16 @@ export default {
   },
   methods: {
     enter() {
-      if (this.nickname !== "") {
-        localStorage.setItem("player", this.nickname);
-        this.$router.push({ name: "Main" });
-      }
-      // this.$axios
-      //   .post("/players", { name: this.nickname })
-      //   .then(({ data }) => {
-      //     localStorage.setItem("token", data.token);
-      //     localStorage.setItem("player", JSON.stringify(data.player));
-      //     this.$router.push({ name: "Main" });
-      //   })
-      //   .catch(err => {
-      //     console.log(err);
-      //   });
+      this.$axios
+        .post("/players", { name: this.nickname })
+        .then(({ data }) => {
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("player", JSON.stringify(data.player));
+          this.$router.push({ name: "Main" });
+        })
+        .catch(err => {
+          console.log(err.response.data);
+        });
     }
   }
 };
