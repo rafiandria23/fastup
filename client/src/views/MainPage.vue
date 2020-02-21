@@ -43,7 +43,7 @@ export default {
   },
   mounted() {
     this.player = JSON.parse(localStorage.player);
-    this.success();
+    this.getRooms();
   },
   created() {
     socket.on("get_rooms", () => {
@@ -62,7 +62,6 @@ export default {
         });
     },
     success() {
-      this.getRooms();
       socket.emit("get_rooms");
     }
   }
