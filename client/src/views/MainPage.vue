@@ -11,7 +11,11 @@
     </div>
     <div class="container mt-5">
       <div v-if="rooms.length" class="row">
-        <room v-for="room in rooms" :key="room.id" :room="room" />
+        <room 
+          v-for="room in rooms" 
+          :key="room.id" 
+          :room="room" 
+        />
       </div>
       <div
         v-else
@@ -26,7 +30,7 @@
 
 <script>
 import io from "socket.io-client";
-const socket = io("http://localhost:3000");
+const socket = io("http://172.16.16.218:3000");
 
 import Room from "../components/Room";
 import FormRoom from "../components/FormRoom";
@@ -62,6 +66,7 @@ export default {
         });
     },
     success() {
+      console.log("masuk cuy");
       socket.emit("get_rooms");
     }
   }

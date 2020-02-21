@@ -10,21 +10,29 @@
 </template>
 
 <script>
+import io from "socket.io-client";
+const socket = io("http://172.16.16.218:3000");
+
 export default {
   props: ["room"],
   methods: {
     join() {
+      let currentToken = JSON.parse(localStorage.player);
       this.$axios
-        .put(`/players/${JSON.parse(localStorage.player).id}`, {
+        .put(`/players/${currentToken.id}`, {
           RoomId: this.room.id
         })
         .then(({ data }) => {
           console.log(data);
+          currentToken.RoomId = this.room.id;
+          // console.log(currentToken);
+          localStorage.setItem("player", JSON.stringify(currentToken));
           this.$router.push({ name: "Game" });
         })
         .catch(err => {
           console.log(err);
         });
+      socket.emit("update_room");
     },
     getQuotes() {
       this.$axios
@@ -36,7 +44,12 @@ export default {
         .catch(err => {
           console.log(err);
         });
-    }
+    },
+  },
+  created() {
+    socket.on('update_room', () => {
+      this.$parent.success();
+    });
   }
 };
 </script>
