@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
 
   Room.associate = function(models) {
     // associations can be defined here
-    Room.belongsToMany(models.Player, {through: 'PlayerRoom'});
-    // Room.hasMany(models.Player, {through: 'PlayerRoom'});
+    // Room.belongsToMany(models.Player, {through: 'PlayerRoom'});
+    Room.hasMany(models.Player);
   };
   
   return Room;
