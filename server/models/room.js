@@ -8,7 +8,6 @@ module.exports = (sequelize, DataTypes) => {
   Room.init({
     name: DataTypes.STRING,
     level: DataTypes.STRING,
-    PlayerId: DataTypes.INTEGER
   }, {sequelize});
 
   Room.associate = function(models) {

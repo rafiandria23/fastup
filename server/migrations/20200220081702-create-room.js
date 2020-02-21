@@ -14,9 +14,6 @@ module.exports = {
       level: {
         type: Sequelize.STRING
       },
-      PlayerId: {
-        type: Sequelize.INTEGER
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

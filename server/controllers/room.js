@@ -4,18 +4,19 @@ const {Room, Player} = require('../models');
 
 class RoomController {
   static create(req, res, next) {
-    const {name, level} = req.body;
-    const PlayerId = req.player.id;
-    Room.create({name, level, PlayerId})
+    const {name} = req.body;
+    Room.create({name})
       .then(result => {
         res.status(201).json(result);
       })
       .catch(err => {
+        console.log(err)
         next(err);
       });
   }
 
   static findAll(req, res, next) {
+    // console.log('Masuk sini')
     Room.findAll({include: [{model: Player}]})
       .then(result => {
         if (result.length == 0) {

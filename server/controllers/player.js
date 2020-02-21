@@ -11,18 +11,31 @@ class PlayerController {
         if (result) {
           return result
         } else {
-          return result;
+          return Player.create({ name })
         }
       })
-      .then(({id, name, score}) => {
-        const token = generateToken({id, name, score});
-        res.status(200).json({token, player: {id, name, score}});
-          return Player.create({ name });
-      })
+      // .then(({id, name, score}) => {
+      //   const token = generateToken({id, name, score});
+      //   res.status(200).json({token, player: {id, name, score}});
+      //     return Player.create({ name });
+      // })
       .then(createdPlayer => {
+        console.log(createdPlayer)
         const { id, name, score } = createdPlayer;
         const token = generateToken({ id, name, score });
         res.status(200).json({ token, player: createdPlayer });
+      })
+      .catch(err => {
+        console.log(err)
+        next(err);
+      });
+  }
+  static updatePlayer(req, res, next) {
+    const { id } = req.params;
+    Player.update({ RoomId: req.body.RoomId }, { where: { id } })
+      .then(result => {
+        console.log(result)
+        res.status(200).json({ message: 'berhasil masuk room' })
       })
       .catch(err => {
         console.log(err)

@@ -26,11 +26,11 @@ export default {
   },
   methods: {
     createRoom() {
-      // this.$emit("success-create-room", this.name);
       this.$axios
         .post("/rooms", { name: this.name })
         .then(({ data }) => {
-          this.$emit("success-create-room", data);
+          console.log(data);
+          this.$emit("success-create-room");
         })
         .catch(err => {
           console.log(err);
