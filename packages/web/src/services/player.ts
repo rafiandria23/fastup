@@ -10,6 +10,8 @@ export interface IPlayerService extends BaseService {
 
 class PlayerService extends BaseService implements IPlayerService  {
   async signIn(payload: { name: string; }): Promise<any> {
+    const { name } = payload;
+
     const { data } = await this.client.post('/players', {
       name,
     });
