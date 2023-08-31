@@ -1,0 +1,29 @@
+{
+  "name": "@fastup/web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Hacktiv8 Phase 2 Week 3 Group Project",
+  "author": {
+    "name": "Adam Rafiandri, Onesinus, Ali"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.5.0",
+    "pinia": "^2.1.6",
+    "socket.io-client": "^4.7.2",
+    "vue": "^3.2.47",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/vue-router": "^2.0.0",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9",
+    "vue-tsc": "^1.4.2"
+  }
+}
