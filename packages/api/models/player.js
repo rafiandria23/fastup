@@ -40,6 +40,15 @@ class Player extends Model {
       },
     );
   }
+
+  static associate(models) {
+    Player.belongsToMany(
+      models.Room,
+      {
+        through: 'PlayerRoom',
+      },
+    );
+  }
 }
 
 module.exports = Player;

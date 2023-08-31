@@ -10,7 +10,7 @@ const room = require('./room');
 const { validateJWT } = require('../middlewares/auth');
 
 router.use('/players', player);
-router.use(validateJWT);
+// router.use(validateJWT);
 router.use('/rooms', room);
 
 module.exports = router;

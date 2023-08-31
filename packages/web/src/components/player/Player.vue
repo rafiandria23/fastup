@@ -7,10 +7,10 @@
 </template>
 
 <script lang="ts">
-export default {
-  props: ['player'],
-  methods: {},
-};
-</script>
+import { defineComponent } from 'vue';
 
-<style></style>
+export default defineComponent({
+  name: 'Player',
+  props: ['player'],
+});
+</script>

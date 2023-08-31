@@ -6,7 +6,7 @@ const router = require('express').Router();
 const PlayerController = require('../controllers/player');
 
 router.post('/', PlayerController.signIn);
-router.put('/:id', PlayerController.updatePlayer);
+router.put('/:id', PlayerController.joinRoom);
 router.post('/addscore', PlayerController.addScore);
 
 module.exports = router;

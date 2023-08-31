@@ -9,9 +9,9 @@
         <form id="form-join" class="d-flex flex-column" @submit.prevent="enter">
           <input
             type="text"
-            v-model="nickname"
+            v-model="name"
             class="input-form"
-            placeholder="Nickname"
+            placeholder="Your name"
           />
           <br />
           <input type="submit" class="btn btn-danger btn-lg" value="Enter" />
@@ -21,26 +21,29 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+// Service
+import { PlayerService } from '../services';
+
+export default defineComponent({
+  name: 'HomeView',
   data() {
     return {
-      nickname: '',
+      name: '',
     };
   },
   methods: {
-    enter() {
-      this.$axios
-        .post('/players', { name: this.nickname })
-        .then(({ data }) => {
-          localStorage.setItem('token', data.token);
-          localStorage.setItem('player', JSON.stringify(data.player));
-          this.$router.push({ name: 'Main' });
-        })
-        .catch((err) => {});
+    async enter() {
+      const { token, player } = await PlayerService.signIn({
+        name: this.name,
+      });
+
+      localStorage.setItem('token', token);
+      localStorage.setItem('player', JSON.stringify(player));
+      this.$router.push('/main');
     },
   },
-};
+});
 </script>
-
-<style></style>

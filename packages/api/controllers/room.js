@@ -9,6 +9,7 @@ class RoomController {
 
     const newRoom = await Room.create({
       name,
+      level: 1,
     });
 
     res.send(newRoom);

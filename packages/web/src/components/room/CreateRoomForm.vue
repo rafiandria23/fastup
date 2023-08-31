@@ -20,17 +20,24 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+// Services
+import { RoomService } from '../../services';
+
 export default defineComponent({
+  name: 'CreateRoomForm',
   data() {
     return {
+      loading: false,
       name: '',
     };
   },
   methods: {
     async createRoom() {
-      await this.$axios.post('/rooms', {
+      this.loading = true;
+      await RoomService.createRoom({
         name: this.name,
       });
+      this.loading = false;
 
       this.$emit('room.created');
     },

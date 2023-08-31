@@ -32,7 +32,7 @@ class PlayerController {
     res.send({ token, player: newPlayer });
   }
 
-  static async updatePlayer(req, res) {
+  static async joinRoom(req, res) {
     const { id } = req.params;
 
     await Player.update(

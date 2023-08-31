@@ -5,14 +5,17 @@
   >
     <div class="col-md-4 align-self-center">
       <h1 class="text-white text-center">
-        Welcome {{ player ? player.name : '' }}
+        Welcome {{ player ? (player as any).name : '' }}
       </h1>
-      <form-room @success-create-room="success" />
+
+      <create-room-form @success-create-room="success" />
     </div>
+
     <div class="container mt-5">
-      <div v-if="rooms.length" class="row">
-        <room v-for="room in rooms" :key="room.id" :room="room" />
+      <div v-if="rooms" class="row">
+        <room v-for="room in rooms" :key="(room as any).id" :room="room" />
       </div>
+
       <div
         v-else
         class="alert alert-light m-5 p-4 text-danger text-center"
@@ -24,21 +27,29 @@
   </div>
 </template>
 
-<script>
-import io from 'socket.io-client';
-const socket = io('http://localhost:3000');
+<script lang="ts">
+import { defineComponent } from 'vue';
+import socketIO from 'socket.io-client';
 
-import Room from '../components/Room';
-import FormRoom from '../components/FormRoom';
-export default {
+// Services
+import { RoomService } from '../services';
+
+// Components
+import Room from '../components/room/Room.vue';
+import CreateRoomForm from '../components/room/CreateRoomForm.vue';
+
+const io = socketIO('http://localhost:3000');
+
+export default defineComponent({
+  name: 'MainView',
   components: {
+    CreateRoomForm,
     Room,
-    FormRoom,
   },
   data() {
     return {
-      rooms: [],
       player: null,
+      rooms: [],
     };
   },
   mounted() {
@@ -46,24 +57,19 @@ export default {
     this.getRooms();
   },
   created() {
-    socket.on('get_rooms', () => {
+    io.on('rooms.get', () => {
       this.getRooms();
     });
   },
   methods: {
-    getRooms() {
-      this.$axios
-        .get('/rooms')
-        .then(({ data }) => {
-          this.rooms = data.rooms;
-        })
-        .catch((err) => {});
+    async getRooms() {
+      const {rooms} = await RoomService.getRooms();
+
+      this.rooms = rooms;
     },
     success() {
-      socket.emit('get_rooms');
+      io.emit('rooms.get');
     },
   },
-};
+});
 </script>
-
-<style></style>

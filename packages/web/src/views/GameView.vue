@@ -4,24 +4,27 @@
     style="height: 100vh; width: 100vw; overflow: auto"
   >
     <div v-if="!isFinished" class="container">
-      <div v-if="!quotes">
+      <div v-if="!quote">
         <div class="text-align-center">
           <div class="row" v-if="players">
             <player :player="player" v-for="(player, i) in players" :key="i" />
           </div>
-          <!-- <div class="row" v-if="!rooms[1]"><h1>Player is belum cukup...</h1></div> -->
+
           <button
             class="btn btn-warning btn-lg text-white w-25 mt-3"
-            @click="getQuotes"
+            @click.prevent="getQuotes"
           >
-            Mulai
+            Start
           </button>
         </div>
       </div>
+
       <div v-else class="d-flex justify-content-center flex-column">
         <h1 class="text-white text-center">FastUp</h1>
+
         <br />
         <br />
+
         <h1
           class="p-4 bg-light text-center rounded-pill"
           onmousedown="return false"
@@ -29,13 +32,14 @@
         >
           {{ sentence }}
         </h1>
+
         <br />
         <br />
+
         <p class="text-center text-white" style="font-size: 72px">
-          your score : {{ score }}
+          Your score: {{ score }}
         </p>
 
-        <!-- <form id="form-join" class="d-flex flex-column"> -->
         <input
           type="text"
           v-on:keyup="typeMonitor"
@@ -43,12 +47,14 @@
           class="input-form"
           placeholder="Type here"
         />
-        <!-- </form> -->
       </div>
     </div>
+
     <div v-if="isFinished" style="color: white; text-align: center">
       <h1>SEKIAN... Terimakasih...</h1>
+
       <br />
+
       <h2>
         Ingat senin
         <h1><b>L I V E C O D E!!!</b></h1>
@@ -57,90 +63,81 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import io from 'socket.io-client';
 const socket = io('http://localhost:3000');
 
-import Player from '../components/Players';
-export default {
+// Services
+import { RoomService, QuoteService } from '../services';
+
+// Components
+import Player from '../components/player/Player.vue';
+
+export default defineComponent({
+  name: 'GameView',
   components: {
     Player,
   },
   data() {
     return {
-      quotes: null,
+      quote: '',
+      sentence: '',
       answer: '',
       score: 0,
-      sentence: null,
-      players: [],
       isFinished: false,
+      players: [],
     };
   },
   created() {
-    socket.on('next_sentence', () => {
+    socket.on('sentence.next', () => {
       this.randomize();
     });
-    socket.on('game_start', () => {
-      this.$axios
-        .get('https://programming-quotes-api.herokuapp.com/quotes/lang/en')
-        .then(({ data }) => {
-          this.quotes = data;
-          this.randomize();
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+
+    socket.on('game.started', async () => {
+      const [{ quote }] =  await QuoteService.getQuote();
+
+      this.quote = quote;
+
+      this.randomize();
     });
   },
   methods: {
     typeMonitor() {
       if (this.answer.toLowerCase() === this.sentence.toLowerCase()) {
         if (this.score == 80) {
-          console.log('game selesai');
+          console.log('Game finished!');
         } else {
-          socket.emit('next_sentence');
+          socket.emit('sentence.next');
           this.answer = '';
           this.score += 10;
-          localStorage.setItem('score', this.score);
+          localStorage.setItem('score', String(this.score));
         }
       }
     },
-    playSound(sound) {
-      if (sound) {
-        var audio = new Audio(sound);
-        audio.play();
-      }
-    },
     randomize() {
-      this.playSound(
-        'http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3',
-      );
-      this.quotes = this.quotes.filter((a) => {
-        return a.en.length < 50;
-      });
-      this.sentence =
-        this.quotes[Math.floor(Math.random() * this.quotes.length)].en;
+      const sound = new Audio('http://soundbible.com/mp3/Air Plane Ding-SoundBible.com-496729130.mp3');
+      sound.play();
+
+      this.sentence = this.quote;
     },
-    getRooms() {
-      this.players = [];
-      this.$axios
-        .get('/rooms')
-        .then(({ data }) => {
-          let playerData = JSON.parse(localStorage.player);
-          this.players = data.rooms[playerData.RoomId - 1].Players;
-          console.log(this.players);
-        })
-        .catch((err) => {});
+    async getRooms() {
+      const {rooms} = await RoomService.getRooms();
+      this.players = rooms[0].Players;
     },
-    getQuotes() {
-      socket.emit('game_start');
+    async getQuotes() {
+      socket.emit('game.started');
+
+      console.log(await QuoteService.getQuote())
+      const [{ quote }] =  await QuoteService.getQuote();
+
+      this.quote = quote;
+
+      this.randomize();
     },
   },
   mounted() {
     this.getRooms();
-    new Audio('/spongbob.mp3').play();
   },
-};
+});
 </script>
-
-<style></style>
