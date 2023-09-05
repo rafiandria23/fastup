@@ -105,3 +105,6 @@ dist
 
 client/dist
 client/.firebase
+
+# VS Code
+.vscode/
