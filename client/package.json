@@ -28,7 +28,7 @@
     "@vue/cli-plugin-router": "^5.0.4",
     "@vue/cli-plugin-vuex": "^5.0.4",
     "@vue/cli-service": "^5.0.4",
-    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
     "@babel/eslint-parser": "^7.11.0",
     "eslint": "^8.25.0",
     "eslint-plugin-prettier": "^4.2.1",
