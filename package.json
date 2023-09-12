@@ -1,9 +1,16 @@
 {
   "name": "fastup",
   "private": true,
+  "scripts": {
+    "dev": "lerna watch -- lerna run start",
+    "test": "lerna run test",
+    "build": "lerna run build",
+    "start": "lerna run start"
+  },
   "workspaces": [
     "packages/*"
   ],
+  "dependencies": {},
   "devDependencies": {
     "lerna": "^6.1.0"
   }
