@@ -547,10 +547,10 @@
     ajv-formats "^2.1.1"
     fast-uri "^2.0.0"
 
-"@fastify/cors@8.4.1":
-  version "8.4.1"
-  resolved "https://registry.yarnpkg.com/@fastify/cors/-/cors-8.4.1.tgz#bd8fece8e175a20059a4c6552f0e7de9e94eafa0"
-  integrity sha512-iYQJtrY3pFiDS5mo5zRaudzg2OcUdJ96PD6xfkKOOEilly5nnrFZx/W6Sce2T79xxlEn2qpU3t5+qS2phS369w==
+"@fastify/cors@8.4.2":
+  version "8.4.2"
+  resolved "https://registry.yarnpkg.com/@fastify/cors/-/cors-8.4.2.tgz#5a3af71a356def991d49d78fe9982fba504d3d0a"
+  integrity sha512-IVynbcPG9eWiJ0P/A1B+KynmiU/yTYbu3ooBUSIeHfca/N1XLb9nIJVCws+YTr2q63MA8Y6QLeXQczEv4npM9g==
   dependencies:
     fastify-plugin "^4.0.0"
     mnemonist "0.39.5"
@@ -999,9 +999,9 @@
     webpack-node-externals "3.0.0"
 
 "@nestjs/common@^10.0.0":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-10.2.10.tgz#22ba5c17962b54ffdf70a7bad690f1647995fe55"
-  integrity sha512-fwAk931rjW8CNH2Mgwawq/7HWHH1dxkOLdcgs7U52ddLk8CtHXjejm1cbNahewlSbNhvlOl7y1STLHutE6sUqw==
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-10.3.0.tgz#d78f0ff2062d1d53c79c170a79c12a1548e2e598"
+  integrity sha512-DGv34UHsZBxCM3H5QGE2XE/+oLJzz5+714JQjBhjD9VccFlQs3LRxo/epso4l7nJIiNlZkPyIUC8WzfU/5RTsQ==
   dependencies:
     uid "2.0.2"
     iterare "1.2.1"
@@ -1018,9 +1018,9 @@
     uuid "9.0.0"
 
 "@nestjs/core@^10.0.0":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-10.2.10.tgz#96b6fda7785402b0a3b819c15103675990b75290"
-  integrity sha512-+ckOI6BPi2ZMHikT9MCG4ctHDc4OnjhoIytrn7f2AYMMXI4bnutJhqyQKc30VDka5x3Wq6QAD57pgSP7y+JjJg==
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-10.3.0.tgz#d5c6b26d6d9280664910d5481153d25c5da4ec00"
+  integrity sha512-N06P5ncknW/Pm8bj964WvLIZn2gNhHliCBoAO1LeBvNImYkecqKcrmLbY49Fa1rmMfEM3MuBHeDys3edeuYAOA==
   dependencies:
     uid "2.0.2"
     "@nuxtjs/opencollective" "0.3.2"
@@ -1038,9 +1038,9 @@
     jsonwebtoken "9.0.2"
 
 "@nestjs/platform-express@^10.0.0":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-10.2.10.tgz#6ff94e5a3f3a15ff39d8044e966fd4ceecd8d068"
-  integrity sha512-U4KDgtMjH8TqEvt0RzC/POP8ABvL9bYoCScvlGtFSKgVGaMLBKkZ4+jHtbQx6qItYSlBBRUuz/dveMZCObfrkQ==
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-10.3.0.tgz#ea69b048ef90b78b1001eb1c6b02d9d798f5f3af"
+  integrity sha512-E4hUW48bYv8OHbP9XQg6deefmXb0pDSSuE38SdhA0mJ37zGY7C5EqqBUdlQk4ttfD+OdnbIgJ1zOokT6dd2d7A==
   dependencies:
     body-parser "1.20.2"
     cors "2.8.5"
@@ -1049,22 +1049,22 @@
     tslib "2.6.2"
 
 "@nestjs/platform-fastify@^10.2.3":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-10.2.10.tgz#6dca8db5623d22a422b83090f388891ef7305b3c"
-  integrity sha512-OGxoLC3mjTPdreE3ooHg6AyXMYdz8m/LDWKr6cssONM5ohtMNcSeexHBFeSx+K4XDyDT3GkspHK+2CSFcphDeA==
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-10.3.0.tgz#be99075a1959e23e82ec75c44b717978459ca2ed"
+  integrity sha512-ka4r/cPWM5y/dXoi9dj6pn1o3WLnfImy2bT3aYVasiDsJff2cd3h/ThugwxjdH0BHUpLSPnawEGzADAcO8Fqug==
   dependencies:
-    "@fastify/cors" "8.4.1"
+    "@fastify/cors" "8.4.2"
     "@fastify/formbody" "7.4.0"
     "@fastify/middie" "8.3.0"
-    fastify "4.24.3"
+    fastify "4.25.1"
     light-my-request "5.11.0"
     path-to-regexp "3.2.0"
     tslib "2.6.2"
 
 "@nestjs/platform-socket.io@^10.2.3":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-socket.io/-/platform-socket.io-10.2.10.tgz#62f1dc8467332850a95260895b4e9dc58c228e3a"
-  integrity sha512-JBuemeIBp2mpp+z7D12oa22k83TnDTxyQDMKZpO/B2/QnBVR+2C4EZ07/XOct14LQXO6vIjmT0iYYCZbNvczjw==
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-socket.io/-/platform-socket.io-10.3.0.tgz#78bd7597e0c335eee664f4e86167367a655df9b8"
+  integrity sha512-Rdpk9OdsvJfsmVRtg4/0+cUdvOgBEb3F4zo2r4SBgxb0eaR3BHbhbXTJH/U7NvREIvvYbtSNoWI+h2taUEkXwg==
   dependencies:
     socket.io "4.7.2"
     tslib "2.6.2"
@@ -1081,16 +1081,16 @@
     pluralize "8.0.0"
 
 "@nestjs/testing@^10.0.0":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-10.2.10.tgz#bd0a1e86622f7aa8cf6d8804af0f23b9444c3099"
-  integrity sha512-IVLUnPz/+fkBtPATYfqTIP+phN9yjkXejmj+JyhmcfPJZpxBmD1i9VSMqa4u54l37j0xkGPscQ0IXpbhqMYUKw==
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-10.3.0.tgz#a4de362de88f855ddee5ed6f5cc25bd6aaf4c4c3"
+  integrity sha512-8DM+bw1qASCvaEnoHUQhypCOf54+G5R21MeFBMvnSk5DtKaWVZuzDP2GjLeYCpTH19WeP6LrrjHv3rX2LKU02A==
   dependencies:
     tslib "2.6.2"
 
 "@nestjs/websockets@^10.2.3":
-  version "10.2.10"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-10.2.10.tgz#f4aee5956adcb767a26d5a3e138f82a807b8e488"
-  integrity sha512-L1AkxwLUj/ntk26jO1SXYl3GRElQE6Fikzfy/3MPFURk0GDs7tHUzLcb8BC8q8u5ZpUjBAC2wFVQzrY5R0MHNw==
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-10.3.0.tgz#b6ace4e0002cbf690b1c46763677c61090fbb408"
+  integrity sha512-1cqh46s4iHLytExSWcvp/58pMZFAT7pQ59IAYQCSZz5xFq0lEGxd36C982KyROQIHfno8E+FWm71UhgVTwKsyA==
   dependencies:
     iterare "1.2.1"
     object-hash "3.0.0"
@@ -4077,10 +4077,10 @@ fastify-plugin@^4.0.0:
   resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-4.5.1.tgz#44dc6a3cc2cce0988bc09e13f160120bbd91dbee"
   integrity sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==
 
-fastify@4.24.3:
-  version "4.24.3"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.24.3.tgz#bf97a3f5158ff7f78af949d483cac4e6115fb651"
-  integrity sha512-6HHJ+R2x2LS3y1PqxnwEIjOTZxFl+8h4kSC/TuDPXtA+v2JnV9yEtOsNSKK1RMD7sIR2y1ZsA4BEFaid/cK5pg==
+fastify@4.25.1:
+  version "4.25.1"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.25.1.tgz#7070ec392f168be9f08d0ac30f819ce1d076dbc8"
+  integrity sha512-D8d0rv61TwqoAS7lom2tvIlgVMlx88lLsiwXyWNjA7CU/LC/mx/Gp2WAlC0S/ABq19U+y/aRvYFG5xLUu2aMrg==
   dependencies:
     "@fastify/ajv-compiler" "^3.5.0"
     "@fastify/error" "^3.4.0"
@@ -4091,8 +4091,8 @@ fastify@4.24.3:
     fast-json-stringify "^5.8.0"
     find-my-way "^7.7.0"
     light-my-request "^5.11.0"
-    pino "^8.16.0"
-    process-warning "^2.2.0"
+    pino "^8.17.0"
+    process-warning "^3.0.0"
     proxy-addr "^2.0.7"
     rfdc "^1.3.0"
     secure-json-parse "^2.7.0"
@@ -7172,10 +7172,10 @@ pino-std-serializers@^6.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-6.2.2.tgz#d9a9b5f2b9a402486a5fc4db0a737570a860aab3"
   integrity sha512-cHjPPsE+vhj/tnhCy/wiMh3M3z3h/j15zHQX+S9GkTBgqJuTuJzYJ4gUyACLhDaJ7kk9ba9iRDmbH2tJU03OiA==
 
-pino@^8.16.0:
-  version "8.16.1"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-8.16.1.tgz#dcaf82764b1a27f24101317cdd6453e96290f1d9"
-  integrity sha512-3bKsVhBmgPjGV9pyn4fO/8RtoVDR8ssW1ev819FsRXlRNgW8gR/9Kx+gCK4UPWd4JjrRDLWpzd/pb1AyWm3MGA==
+pino@^8.17.0:
+  version "8.17.1"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-8.17.1.tgz#f886569cd9abf458f4c921dc696fb023694c1103"
+  integrity sha512-YoN7/NJgnsJ+fkADZqjhRt96iepWBndQHeClmSBH0sQWCb8zGD74t00SK4eOtKFi/f8TUmQnfmgglEhd2kI1RQ==
   dependencies:
     atomic-sleep "^1.0.0"
     fast-redact "^3.1.1"
@@ -7282,10 +7282,15 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-process-warning@^2.0.0, process-warning@^2.2.0:
+process-warning@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/process-warning/-/process-warning-2.2.0.tgz#008ec76b579820a8e5c35d81960525ca64feb626"
   integrity sha512-/1WZ8+VQjR6avWOgHeEPd7SDQmFQ1B5mC1eRXsCm5TarlNmx/wCsa5GEaxGm05BORRtyG/Ex/3xq3TuRvq57qg==
+
+process-warning@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/process-warning/-/process-warning-3.0.0.tgz#96e5b88884187a1dce6f5c3166d611132058710b"
+  integrity sha512-mqn0kFRl0EoqhnL0GQ0veqFHyIN1yig9RHh/InzORTUiZHFRAur+aMtRkELNwGs9aNwKS6tg/An4NYBPGwvtzQ==
 
 process@^0.11.10:
   version "0.11.10"
