@@ -2574,7 +2574,9 @@
     "@types/istanbul-lib-report" "*"
 
 "@types/jest@^30.0.0":
-  version "30.0.2"
+  version "30.0.0"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-30.0.0.tgz#5e85ae568006712e4ad66f25433e9bdac8801f1d"
+  integrity sha512-XTYugzhuwqWjws0CVz8QpM36+T+Dz5mTEBKhNs/esGLnCIlGdRy+Dq78NRjd7ls7r8BC8ZRMOrKlkO1hU0JOwA==
   dependencies:
     expect "^30.0.0"
     pretty-format "^30.0.0"
@@ -2634,9 +2636,9 @@
     undici-types "~6.11.1"
 
 "@types/node@^22.0.0":
-  version "22.15.32"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.32.tgz#c301cc2275b535a5e54bb81d516b1d2e9afe06e5"
-  integrity sha512-3jigKqgSjsH6gYZv2nEsqdXfZqIFGAV36XYYjf9KGZ3PSG+IhLecqPnI310RvjutyMwifE2hhhNEklOUrvx/wA==
+  version "22.15.33"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.33.tgz#5722ba32042fd547c113bc35ea92c1cc59ef68b1"
+  integrity sha512-wzoocdnnpSxZ+6CjW4ADCK1jVmd1S/J3ArNWfn8FDDQtRm8dkDg7TA+mvek2wNrfCgwuZxqEOiB9B1XCJ6+dbw==
   dependencies:
     undici-types "~6.21.0"
 
