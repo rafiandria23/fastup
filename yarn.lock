@@ -3941,13 +3941,13 @@ __metadata:
   linkType: hard
 
 "@nuxt/eslint-config@npm:~1.7.0":
-  version: 1.7.0
-  resolution: "@nuxt/eslint-config@npm:1.7.0"
+  version: 1.7.1
+  resolution: "@nuxt/eslint-config@npm:1.7.1"
   dependencies:
     "@antfu/install-pkg": "npm:^1.1.0"
     "@clack/prompts": "npm:^0.11.0"
     "@eslint/js": "npm:^9.31.0"
-    "@nuxt/eslint-plugin": "npm:1.7.0"
+    "@nuxt/eslint-plugin": "npm:1.7.1"
     "@stylistic/eslint-plugin": "npm:^5.2.1"
     "@typescript-eslint/eslint-plugin": "npm:^8.38.0"
     "@typescript-eslint/parser": "npm:^8.38.0"
@@ -3971,19 +3971,19 @@ __metadata:
   peerDependenciesMeta:
     eslint-plugin-format:
       optional: true
-  checksum: 10c0/356ceb8957eff3be018ff1b8f8b04458c61727ee5a849c08fdd3cdbb312f2d3d3537a2d18f47bd803345ecf64ca555010c64297292714ec7763a359beb8f49ed
+  checksum: 10c0/3f95ece1ea22fcb82d676d193897fad63ca7be28270d03b840158e517b678dba2c2d15f91a531626f4fb5f308e861b023f2b662bcfb39c8b5deb4698fb55f991
   languageName: node
   linkType: hard
 
-"@nuxt/eslint-plugin@npm:1.7.0":
-  version: 1.7.0
-  resolution: "@nuxt/eslint-plugin@npm:1.7.0"
+"@nuxt/eslint-plugin@npm:1.7.1":
+  version: 1.7.1
+  resolution: "@nuxt/eslint-plugin@npm:1.7.1"
   dependencies:
     "@typescript-eslint/types": "npm:^8.38.0"
     "@typescript-eslint/utils": "npm:^8.38.0"
   peerDependencies:
     eslint: ^9.0.0
-  checksum: 10c0/7dbff33cd43cec27a68bf34bd5b2376907b8ada381ea5ec15ee9231eb9046881fb840a2281a7f124431937479e9d5486e8af5f5e592ac9454c7d36426d539ac1
+  checksum: 10c0/1abd75b80bef93c8c49886cbcbcfb0483937b6abc6dad398c6f3a90287a242a75a52e251ddbab683075489fd26cbe2ece65536963211761fd2c346ae8df5b8e7
   languageName: node
   linkType: hard
 
