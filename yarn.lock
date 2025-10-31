@@ -4038,15 +4038,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/devtools-kit@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@nuxt/devtools-kit@npm:3.0.0"
+"@nuxt/devtools-kit@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@nuxt/devtools-kit@npm:3.0.1"
   dependencies:
     "@nuxt/kit": "npm:^4.2.0"
     execa: "npm:^8.0.1"
   peerDependencies:
     vite: ">=6.0"
-  checksum: 10c0/4da63383e6c694cdd0b3a56e91094dd3bff5c3aeaba45945ca4632361e6dfc4ad1089965b7fd4c3281ce986f241e284aa80025ef9434ffa3ab611c1ef60bac07
+  checksum: 10c0/fa8f3bda0d5ee1cb7b2957c95f9a8edd0661bf30aaa72e6de4bd29d31ab387454ceef2978c58cc12a787e4865b1d35cb889ed70e26f040e78ed05f5ba768d6c4
   languageName: node
   linkType: hard
 
@@ -4068,9 +4068,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/devtools-wizard@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@nuxt/devtools-wizard@npm:3.0.0"
+"@nuxt/devtools-wizard@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@nuxt/devtools-wizard@npm:3.0.1"
   dependencies:
     consola: "npm:^3.4.2"
     diff: "npm:^8.0.2"
@@ -4082,16 +4082,16 @@ __metadata:
     semver: "npm:^7.7.3"
   bin:
     devtools-wizard: cli.mjs
-  checksum: 10c0/6dd110670743e133e2ab3d4f47a0d5c789378cac69eb984800a9af31c3fd8303f8930170d27eb7e9a1e1e27f0d3ff7b1cf1bf828645789b2eb6ab452afe15a95
+  checksum: 10c0/bba776f62c947d307a518db3a3683e770b8777810042c56bfcdc0a7043aa81b88645826a5868db1235743471f8e2cf128902a87dd0d0113a20a58317c35f2977
   languageName: node
   linkType: hard
 
-"@nuxt/devtools@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@nuxt/devtools@npm:3.0.0"
+"@nuxt/devtools@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@nuxt/devtools@npm:3.0.1"
   dependencies:
-    "@nuxt/devtools-kit": "npm:3.0.0"
-    "@nuxt/devtools-wizard": "npm:3.0.0"
+    "@nuxt/devtools-kit": "npm:3.0.1"
+    "@nuxt/devtools-wizard": "npm:3.0.1"
     "@nuxt/kit": "npm:^4.2.0"
     "@vue/devtools-core": "npm:^7.7.7"
     "@vue/devtools-kit": "npm:^7.7.7"
@@ -4123,10 +4123,14 @@ __metadata:
     which: "npm:^5.0.0"
     ws: "npm:^8.18.3"
   peerDependencies:
+    "@vitejs/devtools": "*"
     vite: ">=6.0"
+  peerDependenciesMeta:
+    "@vitejs/devtools":
+      optional: true
   bin:
     devtools: cli.mjs
-  checksum: 10c0/215f2f04ab8b2f3ffa412b4d8c815f469c4bfa3ddd1c890dedf96fe52dbbafd59d4e3acd5a985ef8646047d99598a7639a457f5cace8065fcc3d8a5965c62de3
+  checksum: 10c0/df6165b38d980d0b30415d6aa3a251c1382a1c75ec9e7fe0255345b90878aab893be5f1dcdcb68ba32f4299e129d3899a62d8949ec103af505a357616711bb51
   languageName: node
   linkType: hard
 
@@ -5533,7 +5537,7 @@ __metadata:
     "@nestjs/platform-express": "npm:^11.0.0"
     "@nestjs/schematics": "npm:^11.0.0"
     "@nestjs/testing": "npm:^11.0.0"
-    "@nuxt/devtools": "npm:3.0.0"
+    "@nuxt/devtools": "npm:3.0.1"
     "@nuxt/eslint-config": "npm:~1.10.0"
     "@nuxt/kit": "npm:^4.0.0"
     "@nuxt/ui-templates": "npm:^1.3.1"
