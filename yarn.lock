@@ -2812,7 +2812,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:^10.0.0, @eslint/js@npm:^10.0.1":
+"@eslint/js@npm:^10.0.0":
   version: 10.0.1
   resolution: "@eslint/js@npm:10.0.1"
   peerDependencies:
@@ -2821,6 +2821,13 @@ __metadata:
     eslint:
       optional: true
   checksum: 10c0/9f3fcaf71ba7fdf65d82e8faad6ecfe97e11801cc3c362b306a88ea1ed1344ae0d35330dddb0e8ad18f010f6687a70b75491b9e01c8af57acd7987cee6b3ec6c
+  languageName: node
+  linkType: hard
+
+"@eslint/js@npm:^9.39.2":
+  version: 9.39.2
+  resolution: "@eslint/js@npm:9.39.2"
+  checksum: 10c0/00f51c52b04ac79faebfaa65a9652b2093b9c924e945479f1f3945473f78aee83cbc76c8d70bbffbf06f7024626575b16d97b66eab16182e1d0d39daff2f26f5
   languageName: node
   linkType: hard
 
@@ -4636,13 +4643,13 @@ __metadata:
   linkType: hard
 
 "@nuxt/eslint-config@npm:~1.15.0":
-  version: 1.15.0
-  resolution: "@nuxt/eslint-config@npm:1.15.0"
+  version: 1.15.1
+  resolution: "@nuxt/eslint-config@npm:1.15.1"
   dependencies:
     "@antfu/install-pkg": "npm:^1.1.0"
     "@clack/prompts": "npm:^1.0.0"
-    "@eslint/js": "npm:^10.0.1"
-    "@nuxt/eslint-plugin": "npm:1.15.0"
+    "@eslint/js": "npm:^9.39.2"
+    "@nuxt/eslint-plugin": "npm:1.15.1"
     "@stylistic/eslint-plugin": "npm:^5.8.0"
     "@typescript-eslint/eslint-plugin": "npm:^8.55.0"
     "@typescript-eslint/parser": "npm:^8.55.0"
@@ -4666,19 +4673,19 @@ __metadata:
   peerDependenciesMeta:
     eslint-plugin-format:
       optional: true
-  checksum: 10c0/3664f8eb513d5edc57ee10a686082aa837afa98cf495a083b004c05a53e7a275ead6e0d9163035a475e60abe0ebbfb2b15f24b29908944d7e751a51cfd177fa5
+  checksum: 10c0/b078f34fc9367feaebcc1a088a53183fad9f5891d5460488530512857d2df64efb9f17a09f3aa76c8e431dce3b57c55c45e3124c611227850e3f62a6a13d0cba
   languageName: node
   linkType: hard
 
-"@nuxt/eslint-plugin@npm:1.15.0":
-  version: 1.15.0
-  resolution: "@nuxt/eslint-plugin@npm:1.15.0"
+"@nuxt/eslint-plugin@npm:1.15.1":
+  version: 1.15.1
+  resolution: "@nuxt/eslint-plugin@npm:1.15.1"
   dependencies:
     "@typescript-eslint/types": "npm:^8.55.0"
     "@typescript-eslint/utils": "npm:^8.55.0"
   peerDependencies:
     eslint: ^9.0.0 || ^10.0.0
-  checksum: 10c0/4849fd52eea9ab05830016291287cc49e158a26865e9dd814d1138be4ff8e89dee80eed7c2f0e466977255f27fcb73a05d56e4a8801d108fc20b4a129ab6d0f0
+  checksum: 10c0/51a8568c914ec8eaebc6d2f5ee3ed8e4f9c73db9a75d0ffe63696049724cff53513664887663327ed58d56eabfb06abcad3f0f498b24a4aca4f471280812aec0
   languageName: node
   linkType: hard
 
