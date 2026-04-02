@@ -6121,7 +6121,6 @@ __metadata:
     "@vitest/coverage-v8": "npm:^4.0.0"
     "@vitest/ui": "npm:^4.0.0"
     "@vue/test-utils": "npm:^2.4.6"
-    axios: "npm:^1.6.0"
     eslint: "npm:^10.0.0"
     eslint-config-prettier: "npm:^10.0.0"
     eslint-plugin-playwright: "npm:^2.0.0"
@@ -9446,7 +9445,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^1.5.0, axios@npm:^1.6.0":
+"axios@npm:^1.5.0":
   version: 1.14.0
   resolution: "axios@npm:1.14.0"
   dependencies:
