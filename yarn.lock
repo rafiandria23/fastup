@@ -4237,8 +4237,8 @@ __metadata:
   linkType: hard
 
 "@nestjs/core@npm:^11.0.0":
-  version: 11.1.20
-  resolution: "@nestjs/core@npm:11.1.20"
+  version: 11.1.21
+  resolution: "@nestjs/core@npm:11.1.21"
   dependencies:
     "@nuxt/opencollective": "npm:0.4.1"
     fast-safe-stringify: "npm:2.1.1"
@@ -4260,7 +4260,7 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 10c0/7a6fd08b3b85fc2442a76f1f313308ef1509090bfafc31e540e7ad6ee1e336dbf082c24a0a8f86853ca151e4948fad36675585e47b21e4f53e913f4806c457b4
+  checksum: 10c0/eede587f133d3e813008e4656a84c4e598d24e28d9d1a9fc049285d3af4197e4221fd7aa62fcd5d0607e86b460b0217b619ec9b88f44ef11b27200cedd218086
   languageName: node
   linkType: hard
 
