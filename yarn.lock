@@ -12305,11 +12305,11 @@ __metadata:
   linkType: hard
 
 "dotenv@npm:^18.0.0":
-  version: 18.0.0
-  resolution: "dotenv@npm:18.0.0"
+  version: 18.0.1
+  resolution: "dotenv@npm:18.0.1"
   bin:
     dotenv: dist/index.cjs
-  checksum: 10c0/f8978a2d0a45c66bee47e9c873f0003856f4604d8c20bee600841ffd932d5d8d8f1d93f36cce1ae3fa03d883b05a93b80e0f024af1a92e1128118d860f972e72
+  checksum: 10c0/85f1f3e7e666ea59a50bb9cdcafa989529519e03c3d0bc396ff25fb226930d79beb256210c910a6ffceaa081c35aba7d1c058e667b796dfc0c2cecda9790ce64
   languageName: node
   linkType: hard
 
