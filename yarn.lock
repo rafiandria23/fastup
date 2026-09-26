@@ -3903,8 +3903,8 @@ __metadata:
   linkType: hard
 
 "@nestjs/cli@npm:^12.0.0":
-  version: 12.0.6
-  resolution: "@nestjs/cli@npm:12.0.6"
+  version: 12.0.7
+  resolution: "@nestjs/cli@npm:12.0.7"
   dependencies:
     "@angular-devkit/core": "npm:22.2.0"
     "@angular-devkit/schematics": "npm:22.2.0"
@@ -3949,7 +3949,7 @@ __metadata:
       optional: true
   bin:
     nest: bin/nest.js
-  checksum: 10c0/f1d3c70ae54d5589d36d468a04005c3ef7effa96b06a75460a8f0e63ef012f2074ee16436b2f1928a8f0a001c9cce061504a361efb42425c649d10180d255f00
+  checksum: 10c0/61b0d3879b0e8ae6b483ad24c51618c59e3a6ad8618fee3758d82d8d5e30683df171f1baedfb6f844107653cd8f13bf01c04166157dc37c8b68610cfdc2ec58f
   languageName: node
   linkType: hard
 
