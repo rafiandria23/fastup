@@ -40,7 +40,7 @@
     "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-playwright": "^2.0.0",
-    "h3": "^2.0.0",
+    "h3": "^2.0.1",
     "jest": "^30.0.0",
     "jest-environment-node": "^30.0.0",
     "jiti": "2.7.0",
