@@ -14384,8 +14384,8 @@ __metadata:
   linkType: hard
 
 "h3@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "h3@npm:2.0.1"
+  version: 2.0.2
+  resolution: "h3@npm:2.0.2"
   dependencies:
     rou3: "npm:^1.0.0"
     srvx: "npm:^1.0.5"
@@ -14398,8 +14398,8 @@ __metadata:
     ocache:
       optional: true
   bin:
-    h3: bin/h3.mjs
-  checksum: 10c0/4e4df661a69299ed46b03d6eae7e59a0baf8d654c4368f890a456ee5c6dc90d5e7102487173c8a1414983c07d349f2e591030b6de00d63efade4b4b106752006
+    h3: ./bin/h3.mjs
+  checksum: 10c0/0bc2a02f8ce00e8589f6defacdaa536a071f5964c1f0df5cb4962703b3ee2fddea609e5302d6a8a4ba96f8d4d5d475782d9cbbd65ba243fb94ba1e7310a38465
   languageName: node
   linkType: hard
 
