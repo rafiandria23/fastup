@@ -2184,9 +2184,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@devframes/hub@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "@devframes/hub@npm:1.3.2"
+"@devframes/hub@npm:^1.3.5":
+  version: 1.3.5
+  resolution: "@devframes/hub@npm:1.3.5"
   dependencies:
     destr: "npm:^2.0.5"
     h3: "npm:^2.0.8"
@@ -2194,12 +2194,12 @@ __metadata:
     tinyexec: "npm:^1.3.1"
     zigpty: "npm:^0.2.1"
   peerDependencies:
-    "@devframes/agentic": 1.3.2
-    devframe: 1.3.2
+    "@devframes/agentic": 1.3.5
+    devframe: 1.3.5
   peerDependenciesMeta:
     "@devframes/agentic":
       optional: true
-  checksum: 10c0/f1af258299c2d9faf9da5642200bc1e47ee8dfabca091924a9eeb2b8d264de76ead50f812154df5d5b0c56019d1995b8ad8af7a44c57b9e07d416e6e47395037
+  checksum: 10c0/6274e734aac48f74f1cb86d77ed0a58d51917bd482c7a86f15af2dfbac29da1905ce2eb8eb7342a4944794e92f2889433450960851613e4c794b73a01e903f99
   languageName: node
   linkType: hard
 
@@ -2234,20 +2234,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@devframes/plugin-assets@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "@devframes/plugin-assets@npm:1.3.2"
+"@devframes/plugin-assets@npm:^1.3.5":
+  version: 1.3.5
+  resolution: "@devframes/plugin-assets@npm:1.3.5"
   dependencies:
-    "@devframes/service-open": "npm:1.3.2"
+    "@devframes/service-open": "npm:1.3.5"
     cac: "npm:^7.1.0"
     chokidar: "npm:^6.0.0"
     image-meta: "npm:^0.3.1"
     pathe: "npm:^2.0.3"
     tinyglobby: "npm:^0.2.17"
   peerDependencies:
-    "@devframes/plugin-assets--assets": 1.3.2
-    "@devframes/service-shiki": 1.3.2
-    devframe: 1.3.2
+    "@devframes/plugin-assets--assets": 1.3.5
+    "@devframes/service-shiki": 1.3.5
+    devframe: 1.3.5
     vite: ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     "@devframes/plugin-assets--assets":
@@ -2258,19 +2258,19 @@ __metadata:
       optional: true
   bin:
     devframe-assets: ./bin.mjs
-  checksum: 10c0/8875cb422603fd62102ef1cfa70a2cd2153fa0776c0e1db07cdd7ba6b02afcd8364298942bd42ee83f2881547f3ba520eacc81134b29f56faff6bf2900d26be4
+  checksum: 10c0/98a8b9efbc9b9c6b3e0a69cc92defd97926fcaa0788a0a0c1269849ecdb30fd2eb2d54eb98bce9df05b3d472a97743b593df4310d6566f7ffd949654b58c1553
   languageName: node
   linkType: hard
 
-"@devframes/plugin-code-server@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "@devframes/plugin-code-server@npm:1.3.2"
+"@devframes/plugin-code-server@npm:^1.3.5":
+  version: 1.3.5
+  resolution: "@devframes/plugin-code-server@npm:1.3.5"
   dependencies:
-    "@devframes/vite": "npm:1.3.2"
+    "@devframes/vite": "npm:1.3.5"
     cac: "npm:^7.1.0"
   peerDependencies:
-    "@devframes/plugin-code-server--assets": 1.3.2
-    devframe: 1.3.2
+    "@devframes/plugin-code-server--assets": 1.3.5
+    devframe: 1.3.5
     vite: ^8.0.0
   peerDependenciesMeta:
     "@devframes/plugin-code-server--assets":
@@ -2279,18 +2279,18 @@ __metadata:
       optional: true
   bin:
     devframe-code-server: ./bin.mjs
-  checksum: 10c0/673493b075cfc5b5a17877d092c506ebf30754a19802949bd71969c5fba3ca9ccc2d1d61e57928fc04f7c60a4d473393df97d435cff4fac022026333e3c3562e
+  checksum: 10c0/0b962f683ff1ab1c37bb8987068ebfab9959e6c737a1384eecb26181186481c6f73d98b6d1c395349267b42149660c8f3825a7a71403ab3cd6643576270e8076
   languageName: node
   linkType: hard
 
-"@devframes/plugin-data-inspector@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "@devframes/plugin-data-inspector@npm:1.3.2"
+"@devframes/plugin-data-inspector@npm:^1.3.5":
+  version: 1.3.5
+  resolution: "@devframes/plugin-data-inspector@npm:1.3.5"
   dependencies:
     cac: "npm:^7.1.0"
   peerDependencies:
-    "@devframes/plugin-data-inspector--assets": 1.3.2
-    devframe: 1.3.2
+    "@devframes/plugin-data-inspector--assets": 1.3.5
+    devframe: 1.3.5
     vite: ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     "@devframes/plugin-data-inspector--assets":
@@ -2299,7 +2299,7 @@ __metadata:
       optional: true
   bin:
     devframe-data-inspector: ./bin.mjs
-  checksum: 10c0/a61066d8a3be0735472d9da3cae5af3c29b19aa3a41c1e1c1ebea28723257e95b480835c65c352653d14c79f4cb718ebd508682665106c2744147a3baf12b68d
+  checksum: 10c0/4b71f4b01b51071befa5639455ef1fc76bfa6cd5d6c021bd0dab8ac6870d6825c6ffc80f5f78826229014cd77cb7a1dcc0d0c61f3da969c9de5e75c224393d50
   languageName: node
   linkType: hard
 
@@ -2345,15 +2345,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@devframes/plugin-og@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "@devframes/plugin-og@npm:1.3.2"
+"@devframes/plugin-og@npm:^1.3.5":
+  version: 1.3.5
+  resolution: "@devframes/plugin-og@npm:1.3.5"
   dependencies:
     cac: "npm:^7.1.0"
-    parse5: "npm:^8.0.1"
+    parse5: "npm:^8.1.1"
   peerDependencies:
-    "@devframes/plugin-og--assets": 1.3.2
-    devframe: 1.3.2
+    "@devframes/plugin-og--assets": 1.3.5
+    devframe: 1.3.5
     vite: ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     "@devframes/plugin-og--assets":
@@ -2362,7 +2362,7 @@ __metadata:
       optional: true
   bin:
     devframe-og: ./bin.mjs
-  checksum: 10c0/4f61e18fc41552631f638eeedfe197d2f4e7b67ca49205bee8ff63e5fe898d6a5726500e36907a184c9583cd340af48bc6d9662ce3a9eee4798d6757c0edbaf4
+  checksum: 10c0/3bc0bdb4bd01d512c7269e8d1e7ab0a0785bb4d9fe8dd3db4dbaa892615403a94c8230aac9421ddeea6a7454aefc39f276be0d3996aa7d6d64fba7ab0d3d5fbf
   languageName: node
   linkType: hard
 
@@ -2399,14 +2399,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@devframes/service-open@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@devframes/service-open@npm:1.3.2"
+"@devframes/service-open@npm:1.3.5":
+  version: 1.3.5
+  resolution: "@devframes/service-open@npm:1.3.5"
   dependencies:
     pathe: "npm:^2.0.3"
   peerDependencies:
-    devframe: 1.3.2
-  checksum: 10c0/919b4b5281b1326fe7413995d94af2164ddd43c23195030878aded833bc9ca211eb53d0d8f83a2401bca0b180028dd81c1f7558767fd01c0b637c90b23a3d2df
+    devframe: 1.3.5
+  checksum: 10c0/f88f6eddd688ecc2c03d8f8ef9735cdbe6235ef31ef86c6bce9ecc725f8ecbed770448c492d67f29ed6fdc306e6a7b221e24785f9174b599d8b83b3bb6177a88
   languageName: node
   linkType: hard
 
@@ -2431,15 +2431,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@devframes/vite@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@devframes/vite@npm:1.3.2"
+"@devframes/vite@npm:1.3.5":
+  version: 1.3.5
+  resolution: "@devframes/vite@npm:1.3.5"
   dependencies:
     pathe: "npm:^2.0.3"
   peerDependencies:
-    "@devframes/hub": 1.3.2
-    "@devframes/hub-ui": 1.3.2
-    devframe: 1.3.2
+    "@devframes/hub": 1.3.5
+    "@devframes/hub-ui": 1.3.5
+    devframe: 1.3.5
     vite: ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     "@devframes/hub":
@@ -2448,7 +2448,7 @@ __metadata:
       optional: true
     vite:
       optional: true
-  checksum: 10c0/8ed851cebd3c6d6f6857fb68c9584c0f259519854ac03fcbb5e3018f21e318a4625b80d00f821d01cbb954b623af063791f67659aee8f7a3dc747dd621402aba
+  checksum: 10c0/6af326a752292fbb9f496c107a8a1c8333560bd41ae87bfa08269795db64d8a7619482e83c6f41277ab2cb8cea169b8e6441d4c094f0d0f400049600cf9c49db
   languageName: node
   linkType: hard
 
@@ -4916,10 +4916,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/devtools-assets@npm:4.1.0":
-  version: 4.1.0
-  resolution: "@nuxt/devtools-assets@npm:4.1.0"
-  checksum: 10c0/dcd74e49b69f1a772a78ba8935b871f2dfa40a5ffc27af50970510ae0191e851c86095090f5aac99be48167ad8c9f7366bef5daf829cac3a9c2e9808832fbc93
+"@nuxt/devtools-assets@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@nuxt/devtools-assets@npm:4.2.0"
+  checksum: 10c0/206b554140abfc7d1ce82f9c29b8349039fc60bde3c363fbd1d9d7225e9ed68c4055d9ac342fc563431850f6e379b29c09d80a12d80737236b3923e71446a18e
   languageName: node
   linkType: hard
 
@@ -4935,9 +4935,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/devtools-kit@npm:4.1.0":
-  version: 4.1.0
-  resolution: "@nuxt/devtools-kit@npm:4.1.0"
+"@nuxt/devtools-kit@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@nuxt/devtools-kit@npm:4.2.0"
   dependencies:
     nostics: "npm:^1.3.0"
     tinyexec: "npm:^1.3.1"
@@ -4951,7 +4951,7 @@ __metadata:
       optional: true
     nitropack:
       optional: true
-  checksum: 10c0/3caaf858eec4f773c11f2a8b1f1daf733de6198a7970ff0d3df1c3f856991c6d46333aaa5525d1c8f113ee697b57ca6cf0d12a360a385710ce0e93f0524ac860
+  checksum: 10c0/756f9733caffdc263dfdff2cfda599ae03b8a1f9512e83c80e339a8622a99093cfd973e83e3bc96279c025695813cc5e5cc776b049199f1ac04da1e1a904c9f9
   languageName: node
   linkType: hard
 
@@ -4973,22 +4973,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/devtools@npm:4.1.0":
-  version: 4.1.0
-  resolution: "@nuxt/devtools@npm:4.1.0"
+"@nuxt/devtools@npm:4.2.0":
+  version: 4.2.0
+  resolution: "@nuxt/devtools@npm:4.2.0"
   dependencies:
-    "@devframes/hub": "npm:^1.3.2"
-    "@devframes/plugin-assets": "npm:^1.3.2"
-    "@devframes/plugin-code-server": "npm:^1.3.2"
-    "@devframes/plugin-data-inspector": "npm:^1.3.2"
-    "@devframes/plugin-og": "npm:^1.3.2"
-    "@nuxt/devtools-assets": "npm:4.1.0"
-    "@nuxt/devtools-kit": "npm:4.1.0"
+    "@devframes/hub": "npm:^1.3.5"
+    "@devframes/plugin-assets": "npm:^1.3.5"
+    "@devframes/plugin-code-server": "npm:^1.3.5"
+    "@devframes/plugin-data-inspector": "npm:^1.3.5"
+    "@devframes/plugin-og": "npm:^1.3.5"
+    "@nuxt/devtools-assets": "npm:4.2.0"
+    "@nuxt/devtools-kit": "npm:4.2.0"
     "@vitejs/devtools": "npm:^0.8.0"
     "@vitejs/devtools-kit": "npm:^0.8.0"
     consola: "npm:^3.4.2"
     destr: "npm:^2.0.5"
-    devframe: "npm:^1.3.2"
+    devframe: "npm:^1.3.5"
     error-stack-parser-es: "npm:^2.0.1"
     escape-string-regexp: "npm:^5.0.0"
     fast-npm-meta: "npm:^2.2.0"
@@ -5020,7 +5020,7 @@ __metadata:
       optional: true
     vite-plugin-inspect:
       optional: true
-  checksum: 10c0/232e37ed82c794271e572ca16f15c914a5d0c3aee365be63d7fa31350f15f1b9f0a78cf1e15ee7453a4c1a0c42dac49f986dd30e62dd777c045c9a9c71fc976d
+  checksum: 10c0/820d9c381e9de5d4f5445366a9cf09aa7232e9087d9be837fd77937eae8109d47f505d5a1e3460444a644e18ae10122b9ff0c84c23b6c3bd5b41f74f76163ea1
   languageName: node
   linkType: hard
 
@@ -6422,7 +6422,7 @@ __metadata:
     "@nestjs/platform-express": "npm:^12.0.0"
     "@nestjs/schematics": "npm:^12.0.0"
     "@nestjs/testing": "npm:^12.0.0"
-    "@nuxt/devtools": "npm:4.1.0"
+    "@nuxt/devtools": "npm:4.2.0"
     "@nuxt/eslint-config": "npm:~1.17.0"
     "@nuxt/kit": "npm:^4.0.0"
     "@nuxt/ui-templates": "npm:^1.3.1"
@@ -11885,16 +11885,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devframe@npm:^1.3.2":
-  version: 1.3.2
-  resolution: "devframe@npm:1.3.2"
+"devframe@npm:^1.3.5":
+  version: 1.3.5
+  resolution: "devframe@npm:1.3.5"
   dependencies:
     crossws: "npm:^0.4.17"
     h3: "npm:^2.0.8"
     nostics: "npm:^1.3.0"
     pathe: "npm:^2.0.3"
   peerDependencies:
-    "@devframes/agentic": 1.3.2
+    "@devframes/agentic": 1.3.5
     cac: ^7.0.0
   peerDependenciesMeta:
     "@devframes/agentic":
@@ -11903,7 +11903,7 @@ __metadata:
       optional: true
   bin:
     devframe: ./bin/devframe.mjs
-  checksum: 10c0/dd9dc001552c74c5723aa06023149c9d94a4e39fda690a985e58e81876350a88a267da7e498dacbb9baf5f895f98b48d4dbab870b5ccb94b279c66ab91bc0edb
+  checksum: 10c0/61d869dcb3b2c3cad8735f36edd7fcd1e6c333ecba69d81c1e8778161ac9bc3bd1f13613f6f78498f80dd97cb2d0811bd0f11fa7cfe11c51968544c270e0938e
   languageName: node
   linkType: hard
 
@@ -12267,13 +12267,6 @@ __metadata:
   version: 7.0.1
   resolution: "entities@npm:7.0.1"
   checksum: 10c0/b4fb9937bb47ecb00aaaceb9db9cdd1cc0b0fb649c0e843d05cf5dbbd2e9d2df8f98721d8b1b286445689c72af7b54a7242fc2d63ef7c9739037a8c73363e7ca
-  languageName: node
-  linkType: hard
-
-"entities@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "entities@npm:8.0.0"
-  checksum: 10c0/938e631664c19451823344a351aeeafd74fae2d5fa51e4d5b6ff635afaefd4bacf0f609989888c04c42733f46ffdac15211608267ebb02488005891a4793e94d
   languageName: node
   linkType: hard
 
@@ -18499,12 +18492,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse5@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "parse5@npm:8.0.1"
+"parse5@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "parse5@npm:8.1.1"
   dependencies:
-    entities: "npm:^8.0.0"
-  checksum: 10c0/c3c1c5aab55f6e4be5245599790e56e64be7764a4a0edd7f98db4fe3bb380f63add752fa047dff0496446c25f4104f0c7c1967723de640bde92306a7bb67ed2f
+    entities: "npm:^9.0.0"
+  checksum: 10c0/b0c248e09baf90ad137ccc3542ecb6d942b6b98e38cd693da20b392d6d440ac4475dbf97fa58eecd01bbaadba39b738d88c6dfce5d8ae2681ef561e0481e69a7
   languageName: node
   linkType: hard
 
